@@ -112,6 +112,14 @@
         # shellCmd: rg $WORD --vimgrep
         mode: fileLocations
 
+- name: git blame command
+  pattern: "**"
+  config:
+    menuCommands:
+    - name: git blame
+      shellCmd: git blame "$FILEPATH" | less +$LINE
+
+
 - name: git commit
   pattern: "**/.git/COMMIT_EDITMSG"
   config:
