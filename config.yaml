@@ -91,6 +91,16 @@
       shellCmd: tmux send-keys -t 1 "$SELECTION" ENTER
       mode: silent
 
+
+- name: custom fmt command
+  pattern: "**/*.go"
+  config:
+    menuCommands:
+    - name: go fmt current file
+      shellCmd: go fmt $FILEPATH | less
+      save: true  # save the file before running `go fmt`
+
+
 - name: grep command
   pattern: "**"
   config:
