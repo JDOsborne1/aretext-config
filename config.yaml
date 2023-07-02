@@ -121,6 +121,14 @@
     - name: git blame
       shellCmd: git blame "$FILEPATH" | less +$LINE
 
+- name: mods commands
+  pattern: "**"
+  config:
+    menuCommands:
+    - name: summarise document
+      shellCmd: tmux split-window -h "cat \"$FILEPATH\" | mods \"Can you summarise this document?\" | less"
+    - name: suggest improvements
+      shellCmd: tmux split-window -h "cat \"$FILEPATH\" | mods \"Can you suggest improvements to this document?\" | less"
 
 - name: git commit
   pattern: "**/.git/COMMIT_EDITMSG"
