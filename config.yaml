@@ -120,6 +120,13 @@
     menuCommands:
     - name: git blame
       shellCmd: git blame "$FILEPATH" | less +$LINE
+    - name: interactive add 
+      shellCmd: git add --patch
+    - name: commit changes
+      shellCmd: git commit
+      # key commands to remember: j - don't decide, move onto next, s - split hunk into smaller hunks 
+    - name: interactive commit changes
+      shellCmd: git commit --interactive
 
 - name: mods commands
   pattern: "**"
