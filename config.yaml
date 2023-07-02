@@ -149,6 +149,8 @@
       shellCmd: tmux split-window -h "cat \"$FILEPATH\" | mods \"Can you summarise this document?\" | less"
     - name: suggest improvements
       shellCmd: tmux split-window -h "cat \"$FILEPATH\" | mods \"Can you suggest improvements to this document?\" | less"
+    - name: code review 
+      shellCmd: tmux split-window -h "git status -v -v | mods \"Can you code review this change?\" | less"
 
 - name: git commit
   pattern: "**/.git/COMMIT_EDITMSG"
