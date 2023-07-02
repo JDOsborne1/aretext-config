@@ -94,12 +94,12 @@
       mode: silent
 
 
-- name: custom fmt command
+- name: go fmt command
   pattern: "**/*.go"
   config:
     menuCommands:
     - name: go fmt current file
-      shellCmd: go fmt $FILEPATH | less
+      shellCmd: go fmt $FILEPATH 
       save: true  # save the file before running `go fmt`
 
 
