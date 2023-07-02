@@ -130,6 +130,17 @@
     - name: detailed status sidebar
       shellCmd: tmux split-window -h "git status -v -v | less"
 
+
+- name: config management
+  pattern: "**"
+  config:
+    menuCommands:
+    - name: sync config
+      shellCmd: cd ~/.config/aretext/ && git pull origin master && git push origin master
+      save: true
+    - name: commit config
+      shellCmd: cd ~/.config/aretext/ && git commit --interactive
+
 - name: mods commands
   pattern: "**"
   config:
