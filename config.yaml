@@ -78,6 +78,8 @@
     - name: split window vertical
       shellCmd: tmux split-window -v "aretext $FILEPATH"
       mode: silent
+    - name: sidebar shell
+      shellCmd: tmux split-window -h
 
 
 - name: r sessions commands
