@@ -127,6 +127,8 @@
       # key commands to remember: j - don't decide, move onto next, s - split hunk into smaller hunks 
     - name: interactive commit changes
       shellCmd: git commit --interactive
+    - name: detailed status sidebar
+      shellCmd: tmux split-window -h "git status -v -v | less"
 
 - name: mods commands
   pattern: "**"
