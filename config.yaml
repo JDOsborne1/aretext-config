@@ -129,7 +129,11 @@
       shellCmd: git commit --interactive
     - name: detailed status sidebar
       shellCmd: tmux split-window -h "git status -v -v | less"
-
+    - name: merge with master
+      shellCmd: branch="$(git rev-parse --abbrev-ref HEAD)" && git checkout master && git merge $branch | less
+    - name: diff with master
+      shellCmd: tmux split-window -h "git diff master | less"
+      
 
 - name: config management
   pattern: "**"
